@@ -1,0 +1,43 @@
+{
+  "extends": "next/core-web-vitals",
+  "plugins": ["simple-import-sort", "@typescript-eslint"],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "error",
+    "eol-last": ["error", "always"],
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          ["^react", "^next"],
+          ["^axios", "mongoose", "^@fortawesome", "react-hot-toast"],
+          ["^@?\\w"],
+          ["@/(.*)"],
+          ["^[./]"],
+          ["^.+\\.(css|scss)$"]
+        ]
+      }
+    ],
+    "simple-import-sort/exports": "error",
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": [
+          "class",
+          "block",
+          "block-like",
+          "const",
+          "return",
+          "if",
+          "case",
+          "switch",
+          "try",
+          "throw",
+          "expression",
+          "while"
+        ]
+      }
+    ]
+  }
+}
